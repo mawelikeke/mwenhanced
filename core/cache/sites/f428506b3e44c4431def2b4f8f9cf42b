@@ -1,0 +1,29 @@
+<br>
+<div style="width: 659px; height: 29px; background: url('templates/WotLK/images/content-parting.jpg') no-repeat;"><div style="padding: 2px 0px 0px 23px;"><font style="font-family: 'Times New Roman', Times, serif; color: #640909;"><h2>Bug tracker</h2></font></div></div><div style="background: url('templates/WotLK/images/light.jpg') repeat; border-width: 1px; border-color: #000000; border-bottom-style: solid; margin: 0px 0px 5px 0px"><div class="contentdiv"><style media="screen" title="currentStyle" type="text/css">
+    .postContainerPlain {
+        font-family:arial,palatino, georgia, verdana, arial, sans-serif;
+        color:#000000;
+        padding:5px;
+        margin-bottom: 4px;
+        font-size: x-small;
+        font-weight: normal;
+        background-color: #E7CFA3;
+        background-image: url('templates/WotLK/images/light.jpg');
+        border-style: solid; border-color: #000000; border-width: 0px; border-bottom-width:1px; border-top-width:1px;
+        line-height:140%;
+  }
+    .postBody {
+        padding:10px;
+        line-height:140%;
+        font-size: small;
+  }
+    .title {
+        font-family: palatino, georgia, times new roman, serif;
+        font-size: 14pt;
+        color: #640909;
+    }
+</style>
+<table align="center" width="100%"><tr><td align="center">
+<h3><a href="index.php?n=forum&sub=viewforum&fid=2"> --- Bugtracker forum --- </a></h3>
+</td></tr></table>   
+</div></div> 
