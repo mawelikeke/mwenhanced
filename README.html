@@ -238,6 +238,9 @@ body  {
     <!-- Vote -->
     <br /><br /><font size="+1"><center><a name="vote">-- 2.2 Setting Up The Vote System --</a></center></font><br />
     1.1 Your server remote access should be turned on (look in your server config file for Ra.Enable).
+    1.1b If you prefer (most do), you can use SOAP as of patch 3.3.5a. Its setup just like Telnet. Make
+    sure its turned on (look in your server config file for SOAP.Enable). If you choose to have SOAP enabled, you need
+    RA.enabled as well.
 	<br /><br />
  	1.2 Your telnet connection to the server remote must be working properly.
 	<br /><br />
@@ -246,10 +249,10 @@ body  {
  	1.2b. Its best if you create an account via your server console. Out of experiance, ive noticed that accounts created
  	via the server console, have caused users the least amount of grief.
 	<br /><br />
- 	1.3 For every realm, you must enter the RA information to the database. You can either do this manually by going ->realmd->
+ 	1.3 For every realm, you must enter the RA/SOAP information to the database. You can either do this manually by going ->realmd->
  	realmlist->('ra_port', 'ra_user', and 'ra_pass'). Or you can do this the easy way by going ->yousite.com->admin panel->realms->
  	(click your realm name)-> enter your RA info in the fields -> click "update". MAKE SURE you copy the username just how it is
- 	in the database. It should be all CAPS.
+ 	in the database. It should be all CAPS. <font color="#FF0000">[NOTE] If using SOAP, make sure the port is the Soap port NOT the RA    port.</font>
 	<br /><br />
  	[NOTE]  know that its GM level (The ra account) must be set according to (not lower than) Ra.MinLevel in the server config file
  	and this user must have "send money" and "send items" commands active. If you have any problems, check the ra.commands.log file

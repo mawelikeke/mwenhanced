@@ -511,15 +511,25 @@ public function construct_zoneByID(){
 			echo "<center>".$message."<br /><br />";
 		}else{
 		// IF SOAP
-		
-		$client = new SoapClient(NULL,
-		array(
-		"location" => "http://".$remote[0].":".$remote[1]."/",
-		"uri" => "urn:MaNGOS",
-		"style" => SOAP_RPC,
-		"login" => $remote[2],
-		"password" => $remote[3],
-		));
+		if($project == "mangos") {
+			$client = new SoapClient(NULL,
+			array(
+			"location" => "http://".$remote[0].":".$remote[1]."/",
+			"uri" => "urn:MaNGOS",
+			"style" => SOAP_RPC,
+			"login" => $remote[2],
+			"password" => $remote[3]
+			));
+		}elseif($project == "trinity") {
+			$client = new SoapClient(NULL,
+			array(
+			"location" => "http://".$remote[0].":".$remote[1]."/",
+			"uri" => "urn:TC",
+			"style" => SOAP_RPC,
+			"login" => $remote[2],
+			"password" => $remote[3]
+			));
+		}
 		if($itemset != '') {
 			$qray = $WSDB->select("SELECT entry FROM `item_template` WHERE itemset='".$itemset."'");
 			foreach($qray as $d){
@@ -528,11 +538,12 @@ public function construct_zoneByID(){
 				try
 				{
 					$result = $client->executeCommand(new SoapParam($command, "command"));
-					$message = $lang['was_given']." ".$ch_rewards[4]." ".$lang["to"]." ".$_SESSION["char_name"];
+					$message = "<font color='blue'>".$lang['was_given']." ".$items." ".$lang["to"]." ".$char."</font>";
 				}
 				catch(Exception $e)
 				{
-					$message = "Send Mail Problem: ".($e->getMessage());
+					$message = "<font color='darkred'>Send Mail Problem: ".($e->getMessage())."</font>";
+					$error_output++;
 				}
 			echo $message."<br />";
 			}
@@ -544,13 +555,13 @@ public function construct_zoneByID(){
 					try
 					{
 						$result = $client->executeCommand(new SoapParam($command, "command"));
-						$message = $lang['was_given']." ".$ch_rewards[4]." ".$lang["to"]." ".$_SESSION["char_name"];
+						$message = "<font color='blue'>".$lang['was_given']." ".$itemids." ".$lang["to"]." ".$char."</font>";
 					}
 					catch(Exception $e)
 					{
-						$message = "Send Mail Problem: ".($e->getMessage());
+						$message = "<font color='darkred'>Send Mail Problem: ".($e->getMessage())."</font>";
+						$error_output++;
 					}
-					echo $command;
 					echo $message."<br />";
 				}
 		}else{
@@ -558,11 +569,12 @@ public function construct_zoneByID(){
 			try
 			{
 				$result = $client->executeCommand(new SoapParam($command, "command"));
-				$message = $lang['was_given']." ".$ch_rewards[4]." ".$lang["to"]." ".$_SESSION["char_name"];
+				$message = "<font color='blue'>".$lang['was_given']." ".$numb." Gold ".$lang["to"]." ".$char."</font>";
 			}
 			catch(Exception $e)
 			{
-				$message = "Send Mail Problem: ".($e->getMessage());
+				$message = "<font color='darkred'>Send Mail Problem: ".($e->getMessage())."</font>";
+				$error_output++;
 			}
 			echo $message."<br />";
 		}

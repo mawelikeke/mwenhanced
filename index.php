@@ -24,7 +24,7 @@
 /****************************************************************************/
 
 // Current Revision format is: version.revision
-$rev = "2.2";
+$rev = "2.3";
 
 // Set error reporting to only a few things.
 error_reporting( E_ERROR | E_PARSE | E_WARNING ) ;

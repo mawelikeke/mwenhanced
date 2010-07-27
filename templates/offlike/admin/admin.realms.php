@@ -97,7 +97,7 @@
 			<td colspan="4">Remote Access Address: <input type="text" name="ra_port" value="<?php echo $item['ra_address']; ?>" style="width:100%;"></td>
 		</tr>
 		<tr>
-			<td colspan="4">Remote Access Port: <input type="text" name="ra_port" value="<?php echo $item['ra_port']; ?>" style="width:100%;"></td>
+			<td colspan="4">Remote Access Port: <br />(If using SOAP, Use SOAP port NOT RA Port!!)<input type="text" name="ra_port" value="<?php echo $item['ra_port']; ?>" style="width:100%;"></td>
 		</tr>
 		<tr>
 			<td colspan="4">Remote Access Account Username (In All CAPS!): <input type="text" name="ra_user" value="<?php echo $item['ra_user']; ?>" style="width:100%;"></td>
