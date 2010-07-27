@@ -295,7 +295,7 @@ function show_rewards()
 }
 function chose_reward($reward)
 {
-	global $lang, $core_rev, $remote_access, $DB, $MW;
+	global $lang, $core_rev, $remote_access, $DB, $MW, $project;
 	$getourreward = $DB->select("SELECT `item_id`, `quanity`, `cost`, `quality`, `reward_text` FROM voting_rewards WHERE `id`=?d",$reward);
 	foreach($getourreward as $rewardvaluez){
 		$itemid = $rewardvaluez['item_id'];
@@ -365,27 +365,38 @@ function chose_reward($reward)
 		$command = "send items ".$_SESSION["char_name"]." \"".$lang["mail_subject"]."\" \"".$lang["mail_message"]."\" ".$ch_rewards[0].":".$ch_rewards[1];
 	else
 		$command = "send money ".$_SESSION["char_name"]." \"".$lang["mail_subject"]."\" \"".$lang["mail_message"]."\" ".$ch_rewards[1];
-	$client = new SoapClient(NULL,
-	array(
-	"location" => "http://".$remote[0].":".$remote[1]."/",
-	"uri" => "urn:MaNGOS",
-	"style" => SOAP_RPC,
-	"login" => $remote[2],
-	"password" => $remote[3],
-	));
+	if($project == "mangos") {
+			$client = new SoapClient(NULL,
+			array(
+			"location" => "http://".$remote[0].":".$remote[1]."/",
+			"uri" => "urn:MaNGOS",
+			"style" => SOAP_RPC,
+			"login" => $remote[2],
+			"password" => $remote[3]
+			));
+		}elseif($project == "trinity") {
+			$client = new SoapClient(NULL,
+			array(
+			"location" => "http://".$remote[0].":".$remote[1]."/",
+			"uri" => "urn:TC",
+			"style" => SOAP_RPC,
+			"login" => $remote[2],
+			"password" => $remote[3]
+			));
+		}
 	try
 	{
 		$result = $client->executeCommand(new SoapParam($command, "command"));
 		$DB->query("UPDATE `voting_points` SET `points`=(`points` - ".$ch_rewards[2]."), `points_spent`=(`points_spent` + ".$ch_rewards[2].") 
 					WHERE `id` = ".$_SESSION["user_id"]." LIMIT 1");
 		$_SESSION["points"] -= $ch_rewards[2];
-		$message = $lang['was_given']." ".$ch_rewards[4]." ".$lang["to"]." ".$_SESSION["char_name"];
+		$message = "<font color='blue'>".$lang['was_given']." ".$ch_rewards[4]." ".$lang["to"]." ".$_SESSION["char_name"]."</font>";
 	}
 	catch(Exception $e)
 	{
-		$message = "Send Mail Problem: ".($e->getMessage());
+		$message = "<font color='darkred'>Send Mail Problem: ".($e->getMessage())."</font>";
 	}
-	return $message."<br />";
+	echo $message."<br />";
 	}
 }
 ?>
