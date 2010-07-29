@@ -11,6 +11,8 @@ Welcome to the MangosWeb Enhanced v2 Admin Panel. Current MangosWeb Revision: <?
 	  <li><a href="index.php?n=admin&sub=faq">FAQ Admin</a></li>
 	  <li><a href="index.php?n=admin&sub=langs"><?php echo $lang['langs_manage'];?></a></li>
 	  <li><a href="index.php?n=admin&sub=updatefields">Update Data Fields</a></li>
+	  <!--<br />-->
+	  <li><a href="components/admin/extplorer/" target="_blank">MangosWeb File Manager</a></li>
 </ul>
 
 <ul style="font-weight:bold;"><h2>Character Tools</h2>

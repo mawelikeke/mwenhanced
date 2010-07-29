@@ -2,7 +2,7 @@ Here is a list of things that need to be added/fixed:
 
 1. Start adding compatability for all patches in this repo, so users always have the most uptodate web, no matter what patch 
 they are using.
-2. Improve the forums.
+2. Remove the old forums and create a new "news" module.
 3. Make a custom non-blizzlike template, so users can use mangosweb, with a normal custom template.
 4. Continue to make MangosWeb easier to install and run, As well as improved compatibility with browsers other then Firefox.
 

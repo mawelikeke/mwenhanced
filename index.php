@@ -24,11 +24,15 @@
 /****************************************************************************/
 
 // Current Revision format is: version.revision
-$rev = "2.5";
+$rev = "2.6";
 
 // Set error reporting to only a few things.
-error_reporting( E_ERROR | E_PARSE | E_WARNING ) ;
-ini_set( 'display_errors', '0' ) ;
+ini_set('error_reporting', E_ERROR ^ E_NOTICE ^ E_WARNING);
+error_reporting(E_ERROR ^ E_NOTICE ^ E_WARNING);
+ini_set('log_errors',TRUE);
+ini_set('html_errors',FALSE);
+ini_set('error_log','core/logs/error_log.txt');
+ini_set('display_errors',FALSE);
 
 // Define INCLUDED so that we can check other pages if they are included by this file
 define( 'INCLUDED', true ) ;
