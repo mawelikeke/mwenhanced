@@ -73,18 +73,15 @@
 
         <!--Configuration for forum's-->
         <forum>
-			<!-- General Settings -->
-			<posts_per_page>12</posts_per_page>					<!-- Forum posts per page -->
-			<topics_per_page>16</topics_per_page>				<!-- Forum Topics per page -->
 			
-			<!-- Forum Id's -->
-            <news_forum_id>1</news_forum_id>    <!-- forum id for "news" internal forums ONLY! -->
-            <bugs_forum_id>2</bugs_forum_id>    <!-- forum id for "bugtracker" internal forums ONLY! -->
+			<!-- News Module Forum Id's -->
+            <news_forum_id>1</news_forum_id>    <!-- DONT TOUCH... forum id for "news" This is for the INTERNAL News Module ONLY! -->
+            <bugs_forum_id>2</bugs_forum_id>    <!-- DONT TOUCH... forum id for "bugtracker" internal forums ONLY! -->
 
             <!-- If you want to use external forums ( example Phpbb , you must configure these values)  -->
-            <externalforum>0</externalforum>    <!-- 1 = Use external forum     |    0 = Dont use external forum  -->
+            <externalforum>1</externalforum>    <!-- 1 = Use external forum     |    0 = Dont use external forum  -->
             <frame_forum>0</frame_forum>        <!-- 1 = Use Frame to external forum     |    0 = Redirect to external forum    -->
-            <forum_external_link>LINK HERE</forum_external_link>    <!-- Url of external forum, Make sure to add http:// if outside MangosWeb directory ! -->
+            <forum_external_link>forum/</forum_external_link>    <!-- Url of external forum, Make sure to add http:// if outside MangosWeb directory ! -->
 
             <!-- If you want to use external bugs tracker ( example sourceforge.net , you must configure these values)  -->
             <externalbugstracker>0</externalbugstracker>  <!-- 1 = Use external forum     |    0 = Dont use external Bugs Tracker   -->
@@ -273,7 +270,7 @@
     -->
     <donation>
         <!-- Your paypal email ( Paypal username ) -->
-        <PayPal_Email>wilson.steven10@yahoo.com</PayPal_Email>
+        <PayPal_Email>youremail@yahoo.com</PayPal_Email>
 
         <!-- Default PayPal lang. Just keep it like this.  -->
         <paypallang>EN</paypallang>

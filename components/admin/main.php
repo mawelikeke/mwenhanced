@@ -146,5 +146,12 @@ $com_content['admin'] = array(
         '',
         0
     ),
+	'news' => array(
+        'g_is_admin',
+        'news',
+        'index.php?n=admin&sub=news',
+        '',
+        0
+    ),
 );
 ?>

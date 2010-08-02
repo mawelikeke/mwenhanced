@@ -150,11 +150,13 @@ CREATE TABLE `f_categories` (
   `cat_name` varchar(255) NOT NULL DEFAULT 'New Category',
   `cat_disp_position` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`cat_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of f_categories
 -- ----------------------------
+INSERT INTO `f_categories` VALUES ('1', 'News and Updates', '1');
+INSERT INTO `f_categories` VALUES ('2', 'Bug Tracker', '2');
 
 -- ----------------------------
 -- Table structure for `f_forums`
@@ -162,7 +164,7 @@ CREATE TABLE `f_categories` (
 DROP TABLE IF EXISTS `f_forums`;
 CREATE TABLE `f_forums` (
   `forum_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `forum_name` varchar(255) NOT NULL DEFAULT 'New forum',
+  `forum_name` varchar(255) NOT NULL DEFAULT 'News forum',
   `forum_desc` varchar(255) DEFAULT NULL,
   `redirect_url` varchar(200) DEFAULT NULL,
   `moderators` varchar(255) DEFAULT NULL,
@@ -175,11 +177,12 @@ CREATE TABLE `f_forums` (
   `hidden` tinyint(1) NOT NULL DEFAULT '0',
   `cat_id` smallint(5) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`forum_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of f_forums
 -- ----------------------------
+INSERT INTO `f_forums` VALUES ('1', 'MangosWeb Enhanced News Module', 'Main News Topics', null, null, '0', '0', null, '1', '0', '0', '0', '1');
 
 -- ----------------------------
 -- Table structure for `f_markread`
@@ -216,11 +219,12 @@ CREATE TABLE `f_posts` (
   `edited_by` varchar(30) DEFAULT NULL,
   `topic_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`post_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of f_posts
 -- ----------------------------
+INSERT INTO `f_posts` VALUES ('1', 'Knocturnal', '6', '127.0.0.1', '1', 'You can delete this news post by going &quot;admin panel -&gt; edit news -&gt; \'click this news title\' -&gt; hitting the DELETE THIS POST button&quot;. <img src=\"images/smiles/biggrin.gif\" align=\"absmiddle\"> Enjoy the new News Module <img src=\"images/smiles/smile.gif\" align=\"absmiddle\">', '1280770637', null, null, '1');
 
 -- ----------------------------
 -- Table structure for `f_topics`
@@ -242,11 +246,13 @@ CREATE TABLE `f_topics` (
   `redirect_url` varchar(200) DEFAULT NULL,
   `forum_id` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`topic_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of f_topics
 -- ----------------------------
+INSERT INTO `f_topics` VALUES ('1', 'Knocturnal', '6', 'Welcome To Your New MangosWeb Enhanced v2!', '1280770637', '1280770637', '1', 'Knocturnal', '0', '1', '0', '0', null, '1');
+
 
 -- ----------------------------
 -- Table structure for `gallery`
