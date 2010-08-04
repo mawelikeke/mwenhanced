@@ -164,7 +164,7 @@ INSERT INTO `f_categories` VALUES ('2', 'Bug Tracker', '2');
 DROP TABLE IF EXISTS `f_forums`;
 CREATE TABLE `f_forums` (
   `forum_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `forum_name` varchar(255) NOT NULL DEFAULT 'News forum',
+  `forum_name` varchar(255) NOT NULL DEFAULT 'New forum',
   `forum_desc` varchar(255) DEFAULT NULL,
   `redirect_url` varchar(200) DEFAULT NULL,
   `moderators` varchar(255) DEFAULT NULL,
@@ -177,12 +177,13 @@ CREATE TABLE `f_forums` (
   `hidden` tinyint(1) NOT NULL DEFAULT '0',
   `cat_id` smallint(5) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`forum_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of f_forums
 -- ----------------------------
-INSERT INTO `f_forums` VALUES ('1', 'MangosWeb Enhanced News Module', 'Main News Topics', null, null, '0', '0', null, '1', '0', '0', '0', '1');
+INSERT INTO `f_forums` VALUES ('1', 'MangosWeb Enhanced News Module', 'News for your server', null, null, '1', '1', '1', '1', '0', '0', '0', '1');
+INSERT INTO `f_forums` VALUES ('2', 'Bugs', 'A list of the servers bugs', null, null, '0', '0', null, '1', '0', '0', '0', '2');
 
 -- ----------------------------
 -- Table structure for `f_markread`
@@ -224,7 +225,7 @@ CREATE TABLE `f_posts` (
 -- ----------------------------
 -- Records of f_posts
 -- ----------------------------
-INSERT INTO `f_posts` VALUES ('1', 'Knocturnal', '6', '127.0.0.1', '1', 'You can delete this news post by going &quot;admin panel -&gt; edit news -&gt; \'click this news title\' -&gt; hitting the DELETE THIS POST button&quot;. <img src=\"images/smiles/biggrin.gif\" align=\"absmiddle\"> Enjoy the new News Module <img src=\"images/smiles/smile.gif\" align=\"absmiddle\">', '1280770637', null, null, '1');
+INSERT INTO `f_posts` VALUES ('1', 'wilson212', '6', '127.0.0.1', '6', 'Welcome to your new MangosWeb Enhanced v2. In order to delete this test news, go &quot;Admin panel -&gt; Edit News -&gt; \'click on this news title\' -&gt; and hit the &quot;DELETE THIS NEWS TOPIC&quot; button.&quot; Good luck <img src=\"images/smiles/biggrin.gif\" align=\"absmiddle\">', '1280934760', null, null, '1');
 
 -- ----------------------------
 -- Table structure for `f_topics`
@@ -251,7 +252,7 @@ CREATE TABLE `f_topics` (
 -- ----------------------------
 -- Records of f_topics
 -- ----------------------------
-INSERT INTO `f_topics` VALUES ('1', 'Knocturnal', '6', 'Welcome To Your New MangosWeb Enhanced v2!', '1280770637', '1280770637', '1', 'Knocturnal', '0', '1', '0', '0', null, '1');
+INSERT INTO `f_topics` VALUES ('1', 'wilson212', '6', 'Welcome To Your New MangosWeb Enhanced v2!', '1280934760', '1280934760', '1', 'wilson212', '0', '1', '0', '0', null, '1');
 
 
 -- ----------------------------

@@ -1,4 +1,7 @@
 <br>
+<style>
+div.errorMsg { width: 60%; height: 30px; line-height: 30px; font-size: 10pt; border: 2px solid #e03131; background: #ff9090;}
+</style>
 <?php builddiv_start(0, "News");
 // If action is adding a new News topic
 if($_GET['action'] == 'add'){

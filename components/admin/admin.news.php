@@ -6,6 +6,7 @@ elseif($_GET['action'] == 'edit') { $pathway_info[] = array('title'=>'Edit News'
 else{ $pathway_info[] = array('title'=>'News', 'link'=>'index.php?n=admin&sub=news&action=edit'); }
 // ==================== //
 $df = 1;
+$zz = $user['id'];
 $post_time = time();
 $maxtopic_id = $DB->selectCell("SELECT MAX(topic_id) FROM `f_posts`");
 if(!$maxtopic_id) {
@@ -17,15 +18,15 @@ $topic_id = ($maxtopic_id + 1);
     if($_POST['message']){
 		$message = my_preview($_POST['message']);
         $new_topic_id = $DB->query("INSERT INTO f_topics (topic_poster_id,topic_poster,topic_name,topic_posted,forum_id) VALUES (?,?,?,?d,?d)",
-                $user['id'],$user['character_name'],htmlspecialchars($_POST['title']),$post_time,$df);
+                $user['id'],$user['username'],htmlspecialchars($_POST['title']),$post_time,$df);
             
             $new_post_id = $DB->query("INSERT INTO f_posts (poster,poster_id,poster_character_id,poster_ip,message,posted,topic_id) VALUES (?,?d,?d,?,?,?d,?d)",
-                $user['character_name'],$user['id'],$user['character_id'],$user['ip'],$message,$post_time,$topic_id);
+                $user['username'],$user['id'],$zz,$user['ip'],$message,$post_time,$topic_id);
             
             $DB->query("UPDATE account_extend SET forum_posts=forum_posts+1 WHERE account_id=?d",$user['id']);
                     
             $DB->query("UPDATE f_topics SET last_post=?d, last_post_id=?d, last_poster=? WHERE topic_id=?d",
-                $post_time,$new_post_id,$user['character_name'],$topic_id);
+                $post_time,$new_post_id,$user['username'],$topic_id);
             
             $DB->query("UPDATE f_forums SET num_topics=num_topics+1, num_posts=num_posts+1,last_topic_id=?d WHERE forum_id=?d",
                 $topic_id,$df);

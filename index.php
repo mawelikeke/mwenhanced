@@ -24,7 +24,7 @@
 /****************************************************************************/
 
 // Current Revision format is: version.revision
-$rev = "2.8";
+$rev = "2.9";
 
 // Set error reporting to only a few things.
 ini_set('error_reporting', E_ERROR ^ E_NOTICE ^ E_WARNING);
