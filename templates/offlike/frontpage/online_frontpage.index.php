@@ -21,7 +21,11 @@ if ($banner):
 </div>
     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <?php else: ?>
-    <img src="<?php echo $currtmp; ?>/images/banner1.jpg" alt="" width="500"/><br/>
+    <div id="flashcontainer">
+	<br /><br /><br /><br />
+    <center><img src="<?php echo $currtmp; ?>/images/banner1.jpg" alt="" width="470"/></center>
+	</div>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <?php endif; ?>
 </div>
 <div class="module-container" <?php if ($banner==1) echo 'style="position: relative;"';?>>
